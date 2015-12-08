@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+section.start-slider {
+  background-image: -webkit-radial-gradient(#aaa, #777, #333);
+  background-image: radial-gradient(#aaa, #777, #333);
+  width: 100%;
+  padding: 50px 0;
+  position: relative;
+  height: auto;
+  z-index: 1;
+}
+section.start-slider h1 {
+  text-align: center;
+  font-family: 'Candal' sans-serif;
+  font-size: 3em;
+}
+section.start-slider h1 span {
+  color: #fff;
+}
+section.start-slider #slider-wrapper {
+  border: 7px solid #fff;
+  width: 480px;
+  height: 337px;
+  margin: 50px auto;
+  position: relative;
+  margin-bottom: 20px;
+  background: #fff;
+  overflow: hidden;
+}
+@media (min-width: 1600px) {
+  section.start-slider #slider-wrapper {
+    width: 720px;
+    height: 505px;
+  }
+}
+@media (max-width: 515px) {
+  section.start-slider #slider-wrapper {
+    border: 3px;
+    width: 96%;
+    height: 300px;
+  }
+}
+section.start-slider .overflow-wrapper {
+  width: 400%;
+  height: 80%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+section.start-slider .controller {
+  padding: 6px;
+  background: #000;
+  position: absolute;
+  left: 48%;
+  bottom: 2%;
+  -webkit-border-radius: 20px;
+          border-radius: 20px;
+  opacity: 0.3;
+  cursor: pointer;
+  z-index: 10;
+}
+section.start-slider .control {
+  display: none;
+}
+section.start-slider #s1 {
+  margin-left: -36px;
+}
+section.start-slider #s2 {
+  margin-left: -12px;
+}
+section.start-slider #s3 {
+  margin-left: 12px;
+}
+section.start-slider #s4 {
+  margin-left: 36px;
+}
+section.start-slider #s1:hover,
+section.start-slider #s2:hover,
+section.start-slider #s3:hover,
+section.start-slider #s4:hover {
+  opacity: 0.5;
+}
+section.start-slider #slide1:checked + #s1,
+section.start-slider #slide2:checked + #s2,
+section.start-slider #slide3:checked + #s3,
+section.start-slider #slide4:checked + #s4 {
+  opacity: 1;
+}
+section.start-slider #slide1:checked ~ .overflow-wrapper {
+  margin-left: 0%;
+}
+section.start-slider #slide2:checked ~ .overflow-wrapper {
+  margin-left: -100%;
+}
+section.start-slider #slide3:checked ~ .overflow-wrapper {
+  margin-left: -200%;
+}
+section.start-slider #slide4:checked ~ .overflow-wrapper {
+  margin-left: -300%;
+}
+section.start-slider .slide img {
+  width: 25%;
+  height: 100%;
+  float: left;
+}
+section.pinterest {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  z-index: 20;
+  background-color: #fff;
+  background: url("../media/pinterest/chloe3.jpg");
+  background-position: 0 0;
+}
+@media (min-width: 1600px) and (min-height: 1024px) {
+  section.pinterest {
+    background-color: #f7f7f7;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(25%, #eee), color-stop(25%, transparent)), linear-gradient(90deg, #eee 25%, transparent 25%);
+    background-image: -webkit-linear-gradient(#eee 25%, transparent 25%), -webkit-linear-gradient(0deg, #eee 25%, transparent 25%);
+    background-image: linear-gradient(#eee 25%, transparent 25%), linear-gradient(90deg, #eee 25%, transparent 25%);
+    background-size: 8px 8px;
+  }
+}
+section.pinterest .pins-wrapper {
+  width: 60%;
+  margin-top: 50px;
+  margin-left: 30%;
+}
+@media (max-width: 480px) {
+  section.pinterest .pins-wrapper {
+    margin: 10px auto;
+    width: 80%;
+  }
+}
+section.pinterest .pins-wrapper .cols {
+  -webkit-column-count: 2;
+     -moz-column-count: 2;
+          column-count: 2;
+  -webkit-column-gap: 3px;
+     -moz-column-gap: 3px;
+          column-gap: 3px;
+  -webkit-columns: 240px 2;
+     -moz-columns: 240px 2;
+          columns: 240px 2;
+}
+section.pinterest .pins-wrapper .cols .post {
+  background: rgba(255,255,255,0.8);
+  -webkit-column-break-inside: avoid;
+     page-break-inside: avoid;
+          break-inside: avoid;
+  margin-bottom: 3px;
+}
+section.pinterest .pins-wrapper .cols .post p.text {
+  padding: 10px;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+section.pinterest .pins-wrapper .cols .post p.text cite {
+  display: block;
+}
+section.pinterest .pins-wrapper .cols .post img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
