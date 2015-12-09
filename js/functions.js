@@ -11,7 +11,10 @@
 		startSlider = document.getElementById('ss'),
 		heightSS = startSlider.clientHeight,
 		section = document.getElementById('pin'),
-        down;
+        down,
+        background = document.getElementById('background'),
+        backgroundHeight = background.clientHeight;
+
 
 	if(heightWindow >= heightSS){
 		startSlider.style.position = 'fixed';
@@ -24,6 +27,15 @@
 		section.style.position = 'absolute';
 		section.style.top = heightSS + 'px';
 	}
+
+	function adjustBackground() {
+    	if(heightWindow > backgroundHeight)
+    		background.style.display = 'none';
+    	else
+    		background.style.display = 'block';
+    }
+    
+    adjustBackground();
 
 	function parallax() {
 		offsetY = window.pageYOffset;
@@ -49,19 +61,16 @@
 			} else {
 				if(heightWindow + offsetY < heightSS){
 					startSlider.style.position = 'relative';
-					//startSlider.style.bottom = 0 + "px";
 					fixedSS = false;
 					section.style.position = 'relative';
-					//section.style.top = height + 'px';
 				}
 			}
 		}
-        if(offsetY >= section.offsetTop){
-            down = offsetY - section.offsetTop;
-            section.style.backgroundPositionY = down + 'px';
-        } else {
-            section.style.backgroundPositionY = '0px';
-        }
+
+        if(offsetY >= section.offsetTop)
+        	background.style.position = 'fixed';
+        else
+            background.style.position = 'absolute';
         
 	}
 
@@ -91,10 +100,11 @@
 		// Reset section's properties
 		section.style.position = 'relative';
 		section.style.top = 'auto';
+
+		adjustBackground();
 	}
 
 	window.addEventListener('scroll', parallax);
-	//window.addEventListener('resize', function(event){onresize()});
     window.addEventListener('resize', onresize);
 
 })();
