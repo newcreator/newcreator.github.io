@@ -29,12 +29,12 @@
 	}
 
 	function adjustBackground() {
-    	if(heightWindow > background.clientHeight)
-    		background.style.display = 'none';
+    	if(heightWindow > backgroundHeight)
+    		background.style.opacity = '0';
     	else
-    		background.style.display = 'block';
+    		background.style.opacity = '1';
     }
-    
+
     adjustBackground();
 
 	function parallax() {
@@ -61,16 +61,32 @@
 			} else {
 				if(heightWindow + offsetY < heightSS){
 					startSlider.style.position = 'relative';
+					//startSlider.style.bottom = 0 + "px";
 					fixedSS = false;
 					section.style.position = 'relative';
+					//section.style.top = height + 'px';
 				}
 			}
 		}
+        /*if(offsetY >= section.offsetTop){
+            down = offsetY - section.offsetTop;
+            section.style.backgroundPositionY = down + 'px';
+        } else {
+            section.style.backgroundPositionY = '0px';
+        }*/
 
-        if(offsetY >= section.offsetTop)
+        if(offsetY >= section.offsetTop){
+        	//console.log("offY ", offsetY);
+        	//console.log("offB ", section.offsetTop);
+
+        	//down = offsetY - section.offsetTop;
         	background.style.position = 'fixed';
-        else
+        	//background.style.top = down + 'px';
+        } else {
+            //background.style.top = '0px';
             background.style.position = 'absolute';
+        }
+        
         
 	}
 
@@ -101,10 +117,12 @@
 		section.style.position = 'relative';
 		section.style.top = 'auto';
 
+		//backgroundHeight = background.clientHeight;
 		adjustBackground();
 	}
 
 	window.addEventListener('scroll', parallax);
+	//window.addEventListener('resize', function(event){onresize()});
     window.addEventListener('resize', onresize);
 
 })();
