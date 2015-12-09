@@ -119,6 +119,7 @@ section.pinterest {
   background-image: -webkit-linear-gradient(#eee 25%, transparent 25%), -webkit-linear-gradient(0deg, #eee 25%, transparent 25%);
   background-image: linear-gradient(#eee 25%, transparent 25%), linear-gradient(90deg, #eee 25%, transparent 25%);
   background-size: 8px 8px;
+  overflow: hidden;
 /*@media(min-width 1600px) and (min-height 1024px)
 		background-color: #f7f7f7;
 		background-image: linear-gradient(#eee 25%, transparent 25%),
@@ -130,7 +131,6 @@ section.pinterest #background {
   top: 0;
   z-index: -1;
   width: 1660px;
-  overflow: hidden;
   display: block;
 }
 section.pinterest #background img {
