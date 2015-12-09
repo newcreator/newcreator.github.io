@@ -128,15 +128,10 @@ section.pinterest {
 section.pinterest #background {
   position: absolute;
   top: 0;
-/*right 0
-			bottom 0
-			left 0
-			background-repeat repeat-x*/
   z-index: -1;
   width: 1660px;
   overflow: hidden;
-/*@media(min-width 1600px) and (min-height 1024px)
-				display none*/
+  display: block;
 }
 section.pinterest #background img {
   width: 33.333%;
