@@ -29,7 +29,7 @@
 	}
 
 	function adjustBackground() {
-    	if(heightWindow > backgroundHeight)
+    	if(heightWindow > background.clientHeight)
     		background.style.display = 'none';
     	else
     		background.style.display = 'block';
